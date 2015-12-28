@@ -1,63 +1,13 @@
-<!DOCTYPE html>
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    
-    <!-- [favicon] begin -->
-    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
-    <!-- [favicon] end -->
+@extends('masters._master1')
 
-    <!-- jQuery --> 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
-    <script src="js/init.js"></script>
-</head>
-
-<body>
-    <main>
-    
-        <!-- Dropdown Structure -->
-        <ul id="dropdown1" class="dropdown-content">
-            <li><a href="#!">one</a></li>
-            <li><a href="#!">two</a></li>
-            <li class="divider"></li>
-            <li><a href="#!">three</a></li>
-        </ul>
-
-        <!-- BARRA DE NAVEGACION -->
-        <nav>
-            <div class="nav-wrapper" style="background-color: #152F49;">
-            <div class="container">
-            
-                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
-                <ul class="left hide-on-med-and-down">
-                    <li><a href="#">INICIO</a></li>
-                    <li><a href="#">DINARAC</a></li>
-                    <!-- Dropdown Trigger -->
-                    <li><a class="dropdown-button" href="#" data-activates="dropdown1">DIGEPAZ<i class="mdi-navigation-arrow-drop-down right"></i></a></li>
-                </ul>
-
-                <!-- MENU MOVIL -->
-                <ul class="side-nav" id="mobile-demo">
-                    <li><a href="sass.html">Sass</a></li>
-                    <li><a href="badges.html">Components</a></li>
-                    <li><a href="collapsible.html">Javascript</a></li>
-                    <li><a href="mobile.html">Mobile</a></li>
-                </ul>
-            </div>
-            </div>
-        </nav>
-
+@section('body')
         <!-- CONTENT -->
         <div class="container">
 
             <div class="divider"></div>
             <div class="section">
                 <div class="row valign-wrapper">
-                    <div class="col s3"><img class="responsive-img" src="images/vicepaz-logo.png" title="Viceministerio de Paz" alt="Viceministerio de Paz"/>
+                    <div class="col s3"><img class="responsive-img" src="{{asset('assets/images/vicepaz-logo.png')}}" title="Viceministerio de Paz" alt="Viceministerio de Paz"/>
                     </div>
                     <div class="col s9"><span class="flow-text">|&nbsp; &nbsp; &nbsp;Casas de Justicia</span></div>
                 </div>
@@ -74,7 +24,7 @@
                     <a class="waves-effect waves-light btn btn-nav  center-align" href="mapa.html">Ubicacion</a>
                 </div>
                 <div class="col s6 m3 l3 center-align">
-                    <a class="waves-effect waves-light btn btn-nav" href="cuestionario.html">Mediar</a>
+                    <a class="waves-effect waves-light btn btn-nav" href="{{route('cuestionario')}}">Mediar</a>
                 </div>
             </div>
             
@@ -110,8 +60,7 @@
             
 
         </div>    
-    </main>    
-</body>
+    
 
 <footer class="page-footer" style="background-color: #193654;">
     <div class="container">
@@ -139,4 +88,4 @@
         </div>
     </div>
 </footer>
-</html>
+@endsection()

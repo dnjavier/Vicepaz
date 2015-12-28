@@ -11,21 +11,15 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',['as'=>'casa', 'uses'=>'MainController@index']);
+Route::get('/mediar',['as'=>'cuestionario', 'uses'=>'MainController@cuestionario']);
 
-/*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| This route group applies the "web" middleware group to every route
-| it contains. The "web" middleware group is defined in your HTTP
-| kernel and includes session state, CSRF protection, and more.
-|
-*/
+	//FUNCIONES BOLETA
+	Route::get('/boleta',['as'=>'boleta', 'uses'=>'MainController@boleta']);
+	Route::post('/boleta/enviar',['as'=>'newboleta', 'uses'=>'MainController@newboleta']);
 
-Route::group(['middleware' => ['web']], function () {
-    //
-});
+
+
+
+
+
