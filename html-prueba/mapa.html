@@ -14,6 +14,21 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
     <script src="js/init.js"></script>
+    
+    <script src="http://maps.googleapis.com/maps/api/js"></script>
+
+    <script>
+        function initialize() {
+            var mapProp = {
+                center: new google.maps.LatLng(9.928271299999999,-84.07207119999998),
+                zoom: 18,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            var map=new google.maps.Map(document.getElementById("googleMap"), mapProp);
+        }
+        google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+    
 </head>
 
 <body>
@@ -78,38 +93,47 @@
                 </div>
             </div>
             
-            <div class="section">
-                <div class="row">
-                    <p>La Dirección Nacional de Resolución Alterna de Conflictos (DINARAC) es una de las dependencias pertenecientes al Ministerio de Justicia y Paz, adscritas al Viceministerio de Paz y su misión es la de promover en la sociedad costarricense una cultura para la paz, mediante el desarrollo de los métodos alternos para la resolución de los conflictos, inspirados en la ideología de una educación para la paz, contenida en la Ley N. 7727, sobre Resolución Alterna de Conflictos (RAC) y Promoción de la Paz Social.</p>
-                    
-                    <div class="row">
-                        <div class="col s6">
-                            <h5 class="center-align">Comunidad</h5>
-                            <p>Al vivir en sociedad, y aunque no nos percatemos de ello, todos estamos interconectados, somos dependientes unos de otros.</p>
-                        </div>
-                        
-                        <div class="col s6">
-                            <h5 class="center-align">Cooperación</h5>
-                            <p>Cuando todos trabajamos por una sola causa, se darán muchas ideas creativas que harán más sencilla la labor. Además, construiremos unión que es un puente para superar situaciones de divisón.</p>
-                        </div>
-                        
-                        <div class="col s6">
-                            <h5 class="center-align">No Violencia</h5>
-                            <p>El respeto a las personas y al entorno natural que nos rodean permite que nos desarrollemos aun más en la empatía y la comprensión. Cuando utilizamos el diálogo, logramos soluciones creativas con la no violencia podemos encontrar vías óptimas para solucionar problemas colectivos e individuales.</p>
-                        </div>
-                        
-                        <div class="col s6">
-                            <h5 class="center-align">Testimonio</h5>
-                            <p>Debemos ser testigos de esta búsqueda personal de paz, practicándola diariamente, mediante nuestro trabajo, ya que de esta manera, logramos promover el ideal de paz en las situaciones cotidianas.</p>
-                        </div>
-                        
-                    </div>
+            <div class="row amber lighten-1 no-space">            
+                <div class="col s10 l4 map-top valign-center">
+                    <p class="valign">
+                        <select>
+                            <option value="" selected>Desamparados</option>
+                            <option value="1">San Pedro</option>
+                            <option value="2">Heredia</option>
+                            <option value="3">Tibas</option>
+                        </select>
+                        <label class="map-font">Provincia</label>
+                    </p>
                 </div>
+                <div class="col s2 l8 map-top valign-wrapper">
+                    <a href="sass.html" class="valign"><i class="material-icons map-font">search</i></a>
+                </div>
+                    
             </div>
             
+            <!-- MAPA -->
             
-
-        </div>    
+            <div class="container1 row amber lighten-1">
+                
+                <!-- Tarjeta de informacion -->
+                <div class="col s12 m5 l4 tag1">
+                    <div class="card hoverable small">
+                        <div class="card-image">
+                            <img src="images/vicepaz-oficina.jpg">
+                            <span class="card-title">Desamparados</span>
+                        </div>
+                        <div class="card-content">
+                            <p>Esta es la direccion de la casa de justicias de Desamparados.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- muestra mapa -->
+                <div id="googleMap" style="width:100%;height:380px;"></div>
+            </div>           
+                
+                
+        </div>   
     </main>    
 </body>
 

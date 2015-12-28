@@ -17,4 +17,30 @@
     margin-bottom: 5px;
     background-color: #193654;
 }
+
+.map-top{
+    height: 70px;
+}
+
+.map{
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.map-font{
+    font-size: 35px;
+    color: black;
+}
+
+.container1 {
+    position:relative;
+}
+.tag1 {
+    position: absolute;
+    z-index: 1;
+}
+
+.no-space {
+    margin-bottom: 0;
+}
     
