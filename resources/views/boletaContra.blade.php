@@ -13,7 +13,9 @@
             <div class="row">
                 <h5>Formulario de iniciación</h5>
                 <br>
-                <form action="#">
+                <form action="#">                    
+                    <!-- Contraparte -->
+                    <p>Datos de contraparte</p>
                     <div class="row">
                         <div class="input-field col s12 m6 l6">
                             <input placeholder="Francisco Antonio" id="first_name" type="text" class="validate">
@@ -104,10 +106,18 @@
                             <label>Ocupacion</label>
                         </div>
                     </div>
+
+                    <!-- Observaciones -->
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <textarea id="textarea1" class="materialize-textarea"></textarea>
+                            <label for="textarea1">Observaciones</label>
+                        </div>
+                    </div>
                 </form>
 
                 <center>                    
-                    <a class="waves-effect waves-light btn" href="{{route('formularioContra')}}">SIGUIENTE</a>
+                    <a class="waves-effect waves-light btn" href="{{route('mapa')}}">SIGUIENTE</a>
                 </center>
 
 
