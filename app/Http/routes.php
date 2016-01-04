@@ -12,7 +12,13 @@
 */
 
 Route::get('/',['as'=>'casa', 'uses'=>'MainController@index']);
-Route::get('/mediar',['as'=>'cuestionario', 'uses'=>'MainController@cuestionario']);
+Route::get('/preguntas',['as'=>'preguntas', 'uses'=>'MainController@preguntas']);
+Route::get('/mapa',['as'=>'mapa', 'uses'=>'MainController@mapa']);
+Route::get('/mediar',['as'=>'clasificacion', 'uses'=>'MainController@clasificacion']);
+Route::get('/cuestionario',['as'=>'cuestionario', 'uses'=>'MainController@cuestionario']);
+Route::get('/formulario',['as'=>'formulario', 'uses'=>'MainController@boleta']);
+Route::get('/formularioContra',['as'=>'formularioContra', 'uses'=>'MainController@boletaContra']);
+Route::get('/termina',['as'=>'termina', 'uses'=>'MainController@termina']);
 
 	//FUNCIONES BOLETA
 	Route::get('/boleta',['as'=>'boleta', 'uses'=>'CasosController@boleta']);
