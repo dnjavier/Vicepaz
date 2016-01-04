@@ -15,8 +15,9 @@ Route::get('/',['as'=>'casa', 'uses'=>'MainController@index']);
 Route::get('/mediar',['as'=>'cuestionario', 'uses'=>'MainController@cuestionario']);
 
 	//FUNCIONES BOLETA
-	Route::get('/boleta',['as'=>'boleta', 'uses'=>'MainController@boleta']);
-	Route::post('/boleta/enviar',['as'=>'newboleta', 'uses'=>'MainController@newboleta']);
+	Route::get('/boleta',['as'=>'boleta', 'uses'=>'CasosController@boleta']);
+	Route::get('/boleta/all',['as'=>'verboletas', 'uses'=>'CasosController@verboletas']);
+	Route::post('/boleta/enviar',['as'=>'crearboleta', 'uses'=>'CasosController@newboleta']);
 
 
 
