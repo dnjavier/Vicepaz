@@ -1,0 +1,26 @@
+
+/** SIDE NAV BAR **/
+    header, main, footer {
+        padding-left: 240px;
+    }
+
+    .header-sidebar {
+        height:200px;
+        /**background-color: #152F49;**/
+        background-color: #263238;
+    }
+
+    .img-sidebar{
+        width: 90px;
+        height: auto;
+        padding-top: 10px;
+        margin: auto;
+    }
+
+    @media only screen and (max-width : 992px) {
+        header, main, footer {
+            padding-left: 0;
+        }
+    }
+
+/** END SIDE NAV BAR **/
