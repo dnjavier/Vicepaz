@@ -3,11 +3,11 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="css/dashboard/materialize.css">
-    <link rel="stylesheet" href="css/dashboard/style.css">
+    <link rel="stylesheet" href="{{asset('assets/css/dashboard/materialize.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/dashboard/style.css')}}">
     
     <!-- [favicon] begin -->
-    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
+    <link rel="shortcut icon" type="image/x-icon" href="{{asset('assets/images/favicon.ico')}}" />
     <!-- [favicon] end -->
 
     <!-- jQuery --> 
@@ -34,7 +34,7 @@
                     <div class="header-sidebar">
                         <div class="">
                             <div class="center-align">
-                                <img class="img-sidebar" src="images/vicepaz-logo.png" title="Viceministerio de Paz" alt="Viceministerio de Paz"/>  
+                                <img class="img-sidebar" src="{{asset('assets/images/vicepaz-logo.png')}}" title="Viceministerio de Paz" alt="Viceministerio de Paz"/>  
                             </div>
                         </div>
                         <div class="center-align">
@@ -101,132 +101,29 @@
                     </thead>
 
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>1-1584-0428</td>
-                            <td>Javier Delgado</td>
-                            <td>8850-5706</td>
-                            <td>Pendiente</td>
-                            <td>Desamparados</td>
-                            <td>Divorcio</td>
-                            <td>
-                                <div style="position: relative;">
-                                    <div class="fixed-action-btn horizontal click-to-toggle" style="position: absolute; right: 0px; top: -20px;">
-                                        <a class="btn-floating"><i class="material-icons">add</i></a>
-                                        <ul>
-                                            <li><a class="btn-floating red"><i class="material-icons">clear</i></a></li>
-                                            <li><a class="btn-floating yellow darken-1"><i class="material-icons">create</i></a></li>
-                                            <li><a class="btn-floating blue"><i class="material-icons">zoom_in</i></a></li>
-                                        </ul>
+                        @foreach($datos as $dato)
+                            <tr>
+                                <td>{{$dato->id}}</td>
+                                <td>{{$dato->cedula}}</td>
+                                <td>{{$dato->nombre}}</td>
+                                <td>{{$dato->telefono}}</td>
+                                <td>{{$dato->estado->descripcion}}</td>
+                                <td>{{$dato->provincia}}</td>
+                                <td>{{$dato->clasificacion->descripcion}}</td>
+                                <td>
+                                    <div style="position: relative;">
+                                        <div class="fixed-action-btn horizontal click-to-toggle" style="position: absolute; right: 0px; top: -20px;">
+                                            <a class="btn-floating"><i class="material-icons">add</i></a>
+                                            <ul>
+                                                <li><a class="btn-floating red"><i class="material-icons">clear</i></a></li>
+                                                <li><a class="btn-floating yellow darken-1"><i class="material-icons">create</i></a></li>
+                                                <li><a class="btn-floating blue"><i class="material-icons">zoom_in</i></a></li>
+                                            </ul>
+                                        </div>
                                     </div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>1-1584-0428</td>
-                            <td>Pablo Perez</td>
-                            <td>8756-2563</td>
-                            <td>Terminada</td>
-                            <td>Heredia</td>
-                            <td>Laboral</td>
-                            <td>
-                                <div style="position: relative;">
-                                    <div class="fixed-action-btn horizontal click-to-toggle" style="position: absolute; right: 0px; top: -20px;">
-                                        <a class="btn-floating"><i class="material-icons">add</i></a>
-                                        <ul>
-                                            <li><a class="btn-floating red"><i class="material-icons">clear</i></a></li>
-                                            <li><a class="btn-floating yellow darken-1"><i class="material-icons">create</i></a></li>
-                                            <li><a class="btn-floating blue"><i class="material-icons">zoom_in</i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>1-1584-0428</td>
-                            <td>Pedro Araya</td>
-                            <td>8348-9568</td>
-                            <td>En proceso</td>
-                            <td>Desamparados</td>
-                            <td>Consumidor</td>
-                            <td>
-                                <div style="position: relative;">
-                                    <div class="fixed-action-btn horizontal click-to-toggle" style="position: absolute; right: 0px; top: -20px;">
-                                        <a class="btn-floating"><i class="material-icons">add</i></a>
-                                        <ul>
-                                            <li><a class="btn-floating red"><i class="material-icons">clear</i></a></li>
-                                            <li><a class="btn-floating yellow darken-1"><i class="material-icons">create</i></a></li>
-                                            <li><a class="btn-floating blue"><i class="material-icons">zoom_in</i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>1-1584-0428</td>
-                            <td>Javier Delgado</td>
-                            <td>8850-5706</td>
-                            <td>Pendiente</td>
-                            <td>Desamparados</td>
-                            <td>Divorcio</td>
-                            <td>
-                                <div style="position: relative;">
-                                    <div class="fixed-action-btn horizontal click-to-toggle" style="position: absolute; right: 0px; top: -20px;">
-                                        <a class="btn-floating"><i class="material-icons">add</i></a>
-                                        <ul>
-                                            <li><a class="btn-floating red"><i class="material-icons">clear</i></a></li>
-                                            <li><a class="btn-floating yellow darken-1"><i class="material-icons">create</i></a></li>
-                                            <li><a class="btn-floating blue"><i class="material-icons">zoom_in</i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>1-1584-0428</td>
-                            <td>Pablo Perez</td>
-                            <td>8756-2563</td>
-                            <td>Terminada</td>
-                            <td>Heredia</td>
-                            <td>Laboral</td>
-                            <td>
-                                <div style="position: relative;">
-                                    <div class="fixed-action-btn horizontal click-to-toggle" style="position: absolute; right: 0px; top: -20px;">
-                                        <a class="btn-floating"><i class="material-icons">add</i></a>
-                                        <ul>
-                                            <li><a class="btn-floating red"><i class="material-icons">clear</i></a></li>
-                                            <li><a class="btn-floating yellow darken-1"><i class="material-icons">create</i></a></li>
-                                            <li><a class="btn-floating blue"><i class="material-icons">zoom_in</i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>1-1584-0428</td>
-                            <td>Pedro Araya</td>
-                            <td>8348-9568</td>
-                            <td>En proceso</td>
-                            <td>Desamparados</td>
-                            <td>Consumidor</td>
-                            <td>
-                                <div style="position: relative;">
-                                    <div class="fixed-action-btn horizontal click-to-toggle" style="position: absolute; right: 0px; top: -20px;">
-                                        <a class="btn-floating"><i class="material-icons">add</i></a>
-                                        <ul>
-                                            <li><a class="btn-floating red"><i class="material-icons">clear</i></a></li>
-                                            <li><a class="btn-floating yellow darken-1"><i class="material-icons">create</i></a></li>
-                                            <li><a class="btn-floating blue"><i class="material-icons">zoom_in</i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>                        
+                                </td>
+                            </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>

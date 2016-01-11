@@ -19,11 +19,17 @@ Route::get('/cuestionario',['as'=>'cuestionario', 'uses'=>'MainController@cuesti
 Route::get('/formulario',['as'=>'formulario', 'uses'=>'MainController@boleta']);
 Route::get('/formularioContra',['as'=>'formularioContra', 'uses'=>'MainController@boletaContra']);
 Route::get('/termina',['as'=>'termina', 'uses'=>'MainController@termina']);
+Route::post('/check', 'CasosController@validatePartA');
 
 	//FUNCIONES BOLETA
 	Route::get('/boleta',['as'=>'boleta', 'uses'=>'CasosController@boleta']);
-	Route::get('/boleta/all',['as'=>'verboletas', 'uses'=>'CasosController@verboletas']);
+	Route::get('/boleta/all',['as'=>'verboletas', 'uses'=>'CasosController@boletasInicio']);
 	Route::post('/boleta/enviar',['as'=>'crearboleta', 'uses'=>'CasosController@newboleta']);
+
+//***************ADMINISTRADORES***********************//
+	Route::group(['prefix'=>'admin'], function(){
+		Route::get('/',['as'=>'adminMain', 'uses'=>'CasosController@boletasInicio']);
+	});
 
 
 

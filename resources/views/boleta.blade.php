@@ -14,24 +14,123 @@
                 <h5>Formulario de iniciación</h5>
                 <br>
                 <form action="#">
+                    <!--AFECTADO-->
+                    <div id="afectado" class="">
+                            <div class="row">
+                                <div class="input-field col s12 m6 l6">
+                                    <input placeholder="Francisco Antonio" name="nombre" id="first_name" type="text" class="validate">
+                                    <label for="first_name">Nombre</label>
+                                </div>
+                                <div class="input-field col s6 m3 l3">
+                                    <input placeholder="Muñoz" name="apellido1" id="first_name" type="text" class="validate">
+                                    <label for="first_name">Primer Apellido</label>
+                                </div>
+                                <div class="input-field col s6 m3 l3">
+                                    <input placeholder="Araya" name="apellido2" id="first_name" type="text" class="validate">
+                                    <label for="first_name">Segundo Apellido</label>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="input-field col s12 m4 l4">
+                                    <select name="provincia">
+                                        <option value="" disabled selected>Seleccionar</option>
+                                        <option value="1">San Jose</option>
+                                        <option value="2">Heredia</option>
+                                        <option value="3">Cartago</option>
+                                        <option value="3">Alajuela</option>
+                                        <option value="3">Puntarenas</option>
+                                        <option value="3">Guanacaste</option>
+                                        <option value="3">Limon</option>
+                                    </select>
+                                    <label>Provincia</label>
+                                </div>
+                                <div class="input-field col s12 m4 l4">
+                                    <select name="canton">
+                                        <option value="" disabled selected>Seleccionar</option>
+                                        <option value="1">Mas de 6 meses</option>
+                                        <option value="2">Mas de 1 año</option>
+                                        <option value="3">Mas de 5 años</option>
+                                    </select>
+                                    <label>Canton</label>
+                                </div>
+                                <div class="input-field col s12 m4 l4">
+                                    <select name="distrito">
+                                        <option value="" disabled selected>Seleccionar</option>
+                                        <option value="1">Mas de 6 meses</option>
+                                        <option value="2">Mas de 1 año</option>
+                                        <option value="3">Mas de 5 años</option>
+                                    </select>
+                                    <label>Distrito</label>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="input-field col s12 m3 l3">
+                                    <input placeholder="2222-2222" name="telefono" id="first_name" type="text" class="validate">
+                                    <label for="first_name">Telefono</label>
+                                </div>
+                                <div class="input-field col s12 m3 l3">
+                                    <input placeholder="1-2345-6789" name="cedula" id="first_name" type="text" class="validate">
+                                    <label for="first_name">Cedula</label>
+                                </div>
+                                <div class="input-field col s12 m3 l3">
+                                    <select name="nacionalidad">
+                                        <option value="" disabled selected>Seleccionar</option>
+                                        <option value="1">Costa Rica</option>
+                                        <option value="2">Nicaragua</option>
+                                        <option value="3">Panama</option>
+                                    </select>
+                                    <label>Nacionalidad</label>
+                                </div>
+                                <div class="input-field col s12 m3 l3">
+                                    <select name="edad">
+                                        <option value="" disabled selected>Seleccionar</option>
+                                        <option value="1">18-35</option>
+                                        <option value="2">36-50</option>
+                                        <option value="3">51-65</option>
+                                        <option value="3">+66</option>
+                                    </select>
+                                    <label>Edad</label>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="input-field col s12 m3 l3">
+                                    <select name="ocupacion">
+                                        <option value="" disabled selected>Seleccionar</option>
+                                        <option value="1">Costa Rica</option>
+                                        <option value="2">Nicaragua</option>
+                                        <option value="3">Panama</option>
+                                    </select>
+                                    <label>Ocupacion</label>
+                                </div>
+                            </div>
+                        
+                </div>
+
+                <div id="contraparte" class="inactive">
+
+                    <!-- CONTRAPARTE -->
+                    <p>Datos de contraparte</p>
                     <div class="row">
                         <div class="input-field col s12 m6 l6">
-                            <input placeholder="Francisco Antonio" id="first_name" type="text" class="validate">
+                            <input placeholder="Francisco Antonio" name="cpnombre" id="first_name" type="text" class="validate">
                             <label for="first_name">Nombre</label>
                         </div>
                         <div class="input-field col s6 m3 l3">
-                            <input placeholder="Muñoz" id="first_name" type="text" class="validate">
+                            <input placeholder="Muñoz" name="cpapellido1" id="first_name" type="text" class="validate">
                             <label for="first_name">Primer Apellido</label>
                         </div>
                         <div class="input-field col s6 m3 l3">
-                            <input placeholder="Araya" id="first_name" type="text" class="validate">
+                            <input placeholder="Araya" name="cpapellido2" id="first_name" type="text" class="validate">
                             <label for="first_name">Segundo Apellido</label>
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="input-field col s12 m4 l4">
-                            <select>
+                            <select name="cpprovincia">
                                 <option value="" disabled selected>Seleccionar</option>
                                 <option value="1">San Jose</option>
                                 <option value="2">Heredia</option>
@@ -44,7 +143,7 @@
                             <label>Provincia</label>
                         </div>
                         <div class="input-field col s12 m4 l4">
-                            <select>
+                            <select name="cpcanton">
                                 <option value="" disabled selected>Seleccionar</option>
                                 <option value="1">Mas de 6 meses</option>
                                 <option value="2">Mas de 1 año</option>
@@ -53,7 +152,7 @@
                             <label>Canton</label>
                         </div>
                         <div class="input-field col s12 m4 l4">
-                            <select>
+                            <select name="cpdistrito">
                                 <option value="" disabled selected>Seleccionar</option>
                                 <option value="1">Mas de 6 meses</option>
                                 <option value="2">Mas de 1 año</option>
@@ -65,15 +164,15 @@
 
                     <div class="row">
                         <div class="input-field col s12 m3 l3">
-                            <input placeholder="2222-2222" id="first_name" type="text" class="validate">
+                            <input placeholder="2222-2222" name="cptelefono" id="first_name" type="text" class="validate">
                             <label for="first_name">Telefono</label>
                         </div>
                         <div class="input-field col s12 m3 l3">
-                            <input placeholder="1-2345-6789" id="first_name" type="text" class="validate">
+                            <input placeholder="1-2345-6789" name="cpcedula" id="first_name" type="text" class="validate">
                             <label for="first_name">Cedula</label>
                         </div>
                         <div class="input-field col s12 m3 l3">
-                            <select>
+                            <select name="cpnacionalidad">
                                 <option value="" disabled selected>Seleccionar</option>
                                 <option value="1">Costa Rica</option>
                                 <option value="2">Nicaragua</option>
@@ -82,7 +181,7 @@
                             <label>Nacionalidad</label>
                         </div>
                         <div class="input-field col s12 m3 l3">
-                            <select>
+                            <select name="cpedad">
                                 <option value="" disabled selected>Seleccionar</option>
                                 <option value="1">18-35</option>
                                 <option value="2">36-50</option>
@@ -95,7 +194,7 @@
 
                     <div class="row">
                         <div class="input-field col s12 m3 l3">
-                            <select>
+                            <select name="cpocupacion">
                                 <option value="" disabled selected>Seleccionar</option>
                                 <option value="1">Costa Rica</option>
                                 <option value="2">Nicaragua</option>
@@ -104,10 +203,20 @@
                             <label>Ocupacion</label>
                         </div>
                     </div>
-                </form>
 
-                <center>                    
-                    <a class="waves-effect waves-light btn" href="{{route('formularioContra')}}">SIGUIENTE</a>
+                    <!-- Observaciones -->
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <textarea name="cpobservaciones" id="textarea1" class="materialize-textarea"></textarea>
+                            <label for="textarea1">Observaciones</label>
+                        </div>
+                    </div>
+
+                </div>
+                </form>
+                <center>      
+                    <a class="waves-effect waves-light btn inactive" onClick="previous()" id="btnAnterior">ANTERIOR</a>              
+                    <a class="waves-effect waves-light btn" onClick="next()" id="btnSiguiente">SIGUIENTE</a>
                 </center>
 
 

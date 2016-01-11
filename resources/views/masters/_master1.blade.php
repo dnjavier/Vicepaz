@@ -106,6 +106,7 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="{{asset('assets/js/materialize.js')}}"></script>
     <script src="{{asset('assets/js/init.js')}}"></script>
+    <script src="{{asset('assets/js/app.js')}}"></script>
 </body>
 <footer class="page-footer" style="background-color: #193654;">
     <div class="container">

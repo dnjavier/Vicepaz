@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Boleta;
+use App\Casas;
 
 class CasosController extends Controller
 {
@@ -25,7 +26,6 @@ class CasosController extends Controller
    		$boletaA->nacionalidad = $request->nacionalidad;
    		$boletaA->edad = $request->edad;
    		$boletaA->ocupacion = $request->ocupacion;
-        $boletaA->observaciones = $request->observaciones;
 
 		//LAS VARIABLES DE LA CONTRAPARTE SON IGUALES PERO CON LAS LETRAS CP AL INICIO
    		$boletaCP->nombre = $request->cpnombre;
@@ -39,7 +39,7 @@ class CasosController extends Controller
    		$boletaCP->nacionalidad = $request->cpnacionalidad;
    		$boletaCP->edad = $request->cpedad;
    		$boletaCP->ocupacion = $request->cpocupacion;
-        $boletaCP->observaciones = $request->cpobservaciones;
+      $boletaCP->observaciones = $request->cpobservaciones;
 
         $boletaA::save();
         $boletaCP::save();
@@ -47,9 +47,32 @@ class CasosController extends Controller
    }
 
 
-
-   public function verboletas(){
-   		$boletas = Boleta::find(1);
-   		echo $boletas;
+   //Muestra la informacion de las boletas en la pagina principal del admin
+   public function boletasInicio(){ 
+   		$boletas = Boleta::where('tipo',1)->get();
+      foreach($boletas as $boleta){
+        $boleta->casa;
+        $boleta->estado;
+        $boleta->clasificacion;
+      }
+   		return view('dashboard.casos', ['datos' => $boletas]);
    }
+
+   public function validatePartA(Request $request){
+      $this->validate($request, [
+        'nombre'=>'required|string',
+        'apellido1'=>'required|string',
+        'apellido2'=>'required|string',
+        //'provincia'=>'required|string',
+        //'canton'=>'required|string',
+        //'distrito'=>'required|string',
+        'telefono'=>'required|numeric',
+        'cedula'=>'required|numeric',
+        //'nacionalidad'=>'required|string',
+        //'edad'=>'required|string',
+        //'ocupacion'=>'required|string',
+        ]);
+
+      return response()->json(["status"=>"ok"]);
+    }
 }
