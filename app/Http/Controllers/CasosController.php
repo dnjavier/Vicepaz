@@ -14,8 +14,10 @@ class CasosController extends Controller
     public function crearboleta(Request $request){
    		$boletaA = new Boleta;
    		$boletaCP = new Boleta;
+      $numero = $this->getNumber();
 
       $boletaA->tipo=1;
+      $boletaA->numero=$numero;
    		$boletaA->nombre = $request->nombre;
    		$boletaA->apellido1 = $request->apellido1;
    		$boletaA->apellido2 = $request->apellido2;
@@ -28,8 +30,9 @@ class CasosController extends Controller
    		$boletaA->edad = $request->edad;
    		$boletaA->ocupacion = $request->ocupacion;
 
-		//LAS VARIABLES DE LA CONTRAPARTE SON IGUALES PERO CON LAS LETRAS CP AL INICIO
+		  //LAS VARIABLES DE LA CONTRAPARTE SON IGUALES PERO CON LAS LETRAS CP AL INICIO
       $boletaCP->tipo=2;
+      $boletaCP->numero=$numero;
    		$boletaCP->nombre = $request->cpnombre;
    		$boletaCP->apellido1 = $request->cpapellido1;
    		$boletaCP->apellido2 = $request->cpapellido2;
@@ -43,22 +46,21 @@ class CasosController extends Controller
    		$boletaCP->ocupacion = $request->cpocupacion;
       $boletaCP->observaciones = $request->cpobservaciones;
 
-        $boletaA->save();
-        $boletaCP->save();
+      $boletaCP->save();
+      $boletaA->save();
 
-   }
+    }
 
-
-   //Muestra la informacion de las boletas en la pagina principal del admin
-   public function boletasInicio(){ 
-   		$boletas = Boleta::where('tipo',1)->get();
+    //Muestra la informacion de las boletas en la pagina principal del admin
+    public function boletasInicio(){ 
+      	$boletas = Boleta::where('tipo',1)->get();
       foreach($boletas as $boleta){
         $boleta->casa;
         $boleta->estado;
         $boleta->clasificacion;
-      }
-   		return view('dashboard.casos', ['datos' => $boletas]);
-   }
+       }
+      	return view('dashboard.casos', ['datos' => $boletas]);
+    }
 
    public function validatePartA(Request $request){
       $this->validate($request, [
@@ -76,5 +78,14 @@ class CasosController extends Controller
         ]);
 
       return response()->json(["status"=>"ok"]);
+    }
+
+    public function delete($number){
+      Boleta::where('numero',$number)->delete();
+      return redirect()->route('adminMain');
+    }
+
+    private function getNumber(){
+     return Boleta::where('tipo','1')->max('numero')+1;
     }
 }
