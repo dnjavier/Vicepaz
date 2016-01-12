@@ -23,7 +23,7 @@ Route::post('/check', 'CasosController@validatePartA');
 
 	//FUNCIONES BOLETA
 Route::group(['prefix'=>'boleta'], function(){
-	Route::get('/delete/{number}',['as'=>'verboletas', 'uses'=>'CasosController@delete']);
+	Route::get('/delete/{number}',['as'=>'verboletas', 'uses'=>'CasosController@softdelete']);
 	Route::post('/crear',['as'=>'crearboleta', 'uses'=>'CasosController@crearboleta']);
 });
 	
