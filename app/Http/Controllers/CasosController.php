@@ -80,8 +80,9 @@ class CasosController extends Controller
       return response()->json(["status"=>"ok"]);
     }
 
-    public function delete($number){
-      Boleta::where('numero',$number)->delete();
+    public function softdelete($number){
+      Boleta::where('numero',$number)->update(['tipo'=>'3']);
+      //QUE HACER CON EL ESTADO??
       return redirect()->route('adminMain');
     }
 
