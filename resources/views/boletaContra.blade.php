@@ -13,7 +13,7 @@
             <div class="row">
                 <h5>Formulario de iniciación</h5>
                 <br>
-                <form action="#">                    
+                <form action="{{route('crearboleta')}}">                    
                     <!-- Contraparte -->
                     <p>Datos de contraparte</p>
                     <div class="row">

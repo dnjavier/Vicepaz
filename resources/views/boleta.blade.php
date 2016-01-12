@@ -13,7 +13,7 @@
             <div class="row">
                 <h5>Formulario de iniciación</h5>
                 <br>
-                <form action="#">
+                <form id="formulario" action="{{route('crearboleta')}}" method="POST">
                     <!--AFECTADO-->
                     <div id="afectado" class="">
                             <div class="row">
@@ -213,11 +213,12 @@
                     </div>
 
                 </div>
-                </form>
-                <center>      
+                 <center>      
                     <a class="waves-effect waves-light btn inactive" onClick="previous()" id="btnAnterior">ANTERIOR</a>              
-                    <a class="waves-effect waves-light btn" onClick="next()" id="btnSiguiente">SIGUIENTE</a>
+                    <input type="button" class="waves-effect waves-light btn" onClick="next()" id="btnSiguiente" value="Siguiente"/>
                 </center>
+                </form>
+               
 
 
             </div>                

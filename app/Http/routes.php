@@ -24,7 +24,7 @@ Route::post('/check', 'CasosController@validatePartA');
 	//FUNCIONES BOLETA
 	Route::get('/boleta',['as'=>'boleta', 'uses'=>'CasosController@boleta']);
 	Route::get('/boleta/all',['as'=>'verboletas', 'uses'=>'CasosController@boletasInicio']);
-	Route::post('/boleta/enviar',['as'=>'crearboleta', 'uses'=>'CasosController@newboleta']);
+	Route::post('/boleta/enviar',['as'=>'crearboleta', 'uses'=>'CasosController@crearboleta']);
 
 //***************ADMINISTRADORES***********************//
 	Route::group(['prefix'=>'admin'], function(){

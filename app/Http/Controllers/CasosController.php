@@ -15,6 +15,7 @@ class CasosController extends Controller
    		$boletaA = new Boleta;
    		$boletaCP = new Boleta;
 
+      $boletaA->tipo=1;
    		$boletaA->nombre = $request->nombre;
    		$boletaA->apellido1 = $request->apellido1;
    		$boletaA->apellido2 = $request->apellido2;
@@ -28,6 +29,7 @@ class CasosController extends Controller
    		$boletaA->ocupacion = $request->ocupacion;
 
 		//LAS VARIABLES DE LA CONTRAPARTE SON IGUALES PERO CON LAS LETRAS CP AL INICIO
+      $boletaCP->tipo=2;
    		$boletaCP->nombre = $request->cpnombre;
    		$boletaCP->apellido1 = $request->cpapellido1;
    		$boletaCP->apellido2 = $request->cpapellido2;
@@ -41,8 +43,8 @@ class CasosController extends Controller
    		$boletaCP->ocupacion = $request->cpocupacion;
       $boletaCP->observaciones = $request->cpobservaciones;
 
-        $boletaA::save();
-        $boletaCP::save();
+        $boletaA->save();
+        $boletaCP->save();
 
    }
 

@@ -21,7 +21,7 @@ function next(){
 			}
 		});	
 
-	}else $("form").submit();
+	}
 }
 
 function previous(){
@@ -30,7 +30,8 @@ function previous(){
 		$("#btnAnterior").addClass("inactive");
 		$("#afectado").removeClass("inactive");
 		$("#contraparte").addClass("inactive");
-		$("#btnSiguiente").html('Siguiente');
+		$("#btnSiguiente").attr("value","Siguiente");
+		$("#btnSiguiente").attr("type","button");
 	}
 }
 
@@ -41,6 +42,7 @@ function success(){
 	$("#btnAnterior").removeClass("inactive");
 	$("#afectado").addClass("inactive");
 	$("#contraparte").removeClass("inactive");
-	$("#btnSiguiente").html('Enviar');
+	$("#btnSiguiente").attr("value","Enviar");
+	$("#btnSiguiente").attr("type","submit");
 }
 
