@@ -10,10 +10,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="{{asset('assets/images/favicon.ico')}}" />
     <!-- [favicon] end -->
 
-    <!-- jQuery --> 
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="js/materialize.js"></script>
-    <script src="js/init.js"></script>
+   
 </head>
 
 <body style="background-color: #F5F5F5;">
@@ -141,6 +138,10 @@
             
 
         </div>    
-    </main>    
+    </main> 
+     <!-- jQuery --> 
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="{{asset('assets/js/materialize.js')}}"></script>
+    <script src="{{asset('assets/js/init.js')}}"></script>   
 </body>
 </html>
