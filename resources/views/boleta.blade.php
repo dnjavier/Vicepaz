@@ -16,6 +16,7 @@
                 <form id="formulario" action="{{route('crearboleta')}}" method="POST">
                     <!--AFECTADO-->
                     <div id="afectado" class="">
+                        
                             <div class="row">
                                 <div class="input-field col s12 m6 l6">
                                     <input placeholder="Francisco Antonio" name="nombre" id="txtnombre" type="text" class="validate">
@@ -36,30 +37,24 @@
                                     <select name="provincia" id="cmbprovincia">
                                         <option value="" disabled selected>Seleccionar</option>
                                         <option value="1">San Jose</option>
-                                        <option value="2">Heredia</option>
+                                        <option value="2">Alajuela</option>
                                         <option value="3">Cartago</option>
-                                        <option value="3">Alajuela</option>
-                                        <option value="3">Puntarenas</option>
-                                        <option value="3">Guanacaste</option>
-                                        <option value="3">Limon</option>
+                                        <option value="4">Heredia</option>
+                                        <option value="5">Guanacaste</option>
+                                        <option value="6">Puntarenas</option>
+                                        <option value="7">Limón</option>
                                     </select>
                                     <label>Provincia</label>
                                 </div>
                                 <div class="input-field col s12 m4 l4">
                                     <select name="canton" id="cmbcanton">
                                         <option value="" disabled selected>Seleccionar</option>
-                                        <option value="1">Mas de 6 meses</option>
-                                        <option value="2">Mas de 1 año</option>
-                                        <option value="3">Mas de 5 años</option>
                                     </select>
-                                    <label>Canton</label>
+                                    <label>Cantón</label>
                                 </div>
                                 <div class="input-field col s12 m4 l4">
                                     <select name="distrito" id="cmbdistrito">
                                         <option value="" disabled selected>Seleccionar</option>
-                                        <option value="1">Mas de 6 meses</option>
-                                        <option value="2">Mas de 1 año</option>
-                                        <option value="3">Mas de 5 años</option>
                                     </select>
                                     <label>Distrito</label>
                                 </div>
@@ -99,11 +94,11 @@
                                 <div class="input-field col s12 m3 l3">
                                     <select name="ocupacion" id="cmbocupacion">
                                         <option value="" disabled selected>Seleccionar</option>
-                                        <option value="1">Costa Rica</option>
-                                        <option value="2">Nicaragua</option>
-                                        <option value="3">Panama</option>
+                                        <option value="1">Mecánico</option>
+                                        <option value="2">Técnico</option>
+                                        <option value="3">Oficinista</option>
                                     </select>
-                                    <label>Ocupacion</label>
+                                    <label>Ocupación</label>
                                 </div>
                             </div>
                         
