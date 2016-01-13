@@ -10,6 +10,7 @@
         
         // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
         $('.modal-trigger').leanModal();
+        $("#txttelefono").mask("9999-9999", {placeholder:" "});
 
     }); // End Document Ready
     

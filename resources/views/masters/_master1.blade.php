@@ -107,6 +107,7 @@
     <script src="{{asset('assets/js/materialize.js')}}"></script>
     <script src="{{asset('assets/js/init.js')}}"></script>
     <script src="{{asset('assets/js/app.js')}}"></script>
+    <script src="{{asset('assets/js/jquery.maskedinput.js')}}"></script>
 </body>
 <footer class="page-footer" style="background-color: #193654;">
     <div class="container">
