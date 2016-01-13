@@ -47,9 +47,6 @@
 .inactive{
     display: none;
 }
-.errortxt{
-    border-bottom: 1px solid red !important;
-}
 .errorlbl{
     color: red !important;
 }

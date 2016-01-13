@@ -58,47 +58,39 @@ function next(){
 			error: function(errorThrown){
 				//COMO MANEJAR EL ERROR
 				var errors = $.parseJSON(errorThrown.responseText);
-				if(errors.nombre){
-					$("#txtnombre").addClass("errortxt");
+				if(errors.nombre)
 					$("#lblnombre").addClass("errorlbl");
-					//Materialize.toast('I am a toast!', 4000);
-
-				}if(errors.apellido1){
-					$("#txtapellido1").addClass("errortxt");
+				if(errors.apellido1)
 					$("#lblapellido1").addClass("errorlbl");
 
-				}if(errors.apellido2){
-					$("#txtapellido2").addClass("errortxt");
+				if(errors.apellido2)
+					
 					$("#lblapellido2").addClass("errorlbl");
-				}if(errors.provincia){
-					$("#cmbprovincia").addClass("errortxt");
+				if(errors.provincia)
 					$("#lblprovincia").addClass("errorlbl");
 
-				}if(errors.canton){
-					$("#cmbcanton").addClass("errortxt");
+				if(errors.canton)
 					$("#lblcanton").addClass("errorlbl");
 
-				}if(errors.distrito){
-					$("#cmbdistrito").addClass("errortxt");
+				if(errors.distrito)
 					$("#lbldistrito").addClass("errorlbl");
 
-				}if(errors.telefono){
-					$("#txttelefono").addClass("errortxt");
+				if(errors.telefono)
 					$("#lbltelefono").addClass("errorlbl");
 
-				}if(errors.cedula){
-					$("#txtcedula").addClass("errortxt");
+				if(errors.cedula)
 					$("#lblcedula").addClass("errorlbl");
 
-				}if(errors.edad){
-					$("#cmbedad").addClass("errortxt");
+				if(errors.nacionalidad)
+					$("#lblnacionalidad").addClass("errorlbl");
+
+				if(errors.edad)
 					$("#lbledad").addClass("errorlbl");
 
-				}if(errors.ocupacion){
-					$("#cmbocupacion").addClass("errortxt");
+				if(errors.ocupacion)
 					$("#lblocupacion").addClass("errorlbl");
 
-				}
+				
 			},
 
 			complete: function(jqXHR, textStatus){
@@ -112,8 +104,6 @@ function next(){
 }
 
 function clearErrors(){
-	$("input").removeClass("errortxt");
-	$("select").removeClass("errortxt");
 	$("label").removeClass("errorlbl");
 }
 

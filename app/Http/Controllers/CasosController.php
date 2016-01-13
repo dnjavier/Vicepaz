@@ -67,14 +67,14 @@ class CasosController extends Controller
         'nombre'=>'required|string',
         'apellido1'=>'required|string',
         'apellido2'=>'required|string',
-        //'provincia'=>'required|string',
-        //'canton'=>'required|string',
-        //'distrito'=>'required|string',
-        'telefono'=>'required|numeric',
-        'cedula'=>'required|numeric',
-        //'nacionalidad'=>'required|string',
-        //'edad'=>'required|string',
-        //'ocupacion'=>'required|string',
+        'provincia'=>'required|numeric',
+        'canton'=>'required|numeric',
+        'distrito'=>'required|numeric',
+        'telefono'=>'required|numeric|between:10000000,99999999',
+        'cedula'=>'required|numeric|between:100000000,999999999',
+        'nacionalidad'=>'required|string',
+        'edad'=>'required|string',
+        'ocupacion'=>'required|string',
         ]);
 
       return response()->json(["status"=>"ok"]);
