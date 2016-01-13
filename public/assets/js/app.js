@@ -11,7 +11,15 @@ function next(){
 			dataType: 'json',
 			error: function(errorThrown){
 				//COMO MANEJAR EL ERROR
-				console.log(errorThrown.responseText);
+				var errors = $.parseJSON(errorThrown.responseText);
+				if(errors.nombre){
+					$("#txtnombre").addClass("errortxt");
+					$("#lblnombre").addClass("errorlbl");
+					//Materialize.toast('I am a toast!', 4000);
+				}else if(errors.apellido1){
+					$("#txtapellido1").addClass("errortxt");
+					$("#lblapellido1").addClass("errorlbl");
+				}
 			},
 
 			complete: function(jqXHR, textStatus){

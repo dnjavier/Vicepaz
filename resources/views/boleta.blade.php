@@ -18,22 +18,22 @@
                     <div id="afectado" class="">
                             <div class="row">
                                 <div class="input-field col s12 m6 l6">
-                                    <input placeholder="Francisco Antonio" name="nombre" id="first_name" type="text" class="validate">
-                                    <label for="first_name">Nombre</label>
+                                    <input placeholder="Francisco Antonio" name="nombre" id="txtnombre" type="text" class="validate">
+                                    <label id="lblnombre" for="first_name">Nombre</label>
                                 </div>
                                 <div class="input-field col s6 m3 l3">
-                                    <input placeholder="Muñoz" name="apellido1" id="first_name" type="text" class="validate">
+                                    <input placeholder="Muñoz" name="apellido1" id="txtapellido1" type="text" class="validate">
                                     <label for="first_name">Primer Apellido</label>
                                 </div>
                                 <div class="input-field col s6 m3 l3">
-                                    <input placeholder="Araya" name="apellido2" id="first_name" type="text" class="validate">
+                                    <input placeholder="Araya" name="apellido2" id="txtapellido2" type="text" class="validate">
                                     <label for="first_name">Segundo Apellido</label>
                                 </div>
                             </div>
 
                             <div class="row">
                                 <div class="input-field col s12 m4 l4">
-                                    <select name="provincia">
+                                    <select name="provincia" id="cmbprovincia">
                                         <option value="" disabled selected>Seleccionar</option>
                                         <option value="1">San Jose</option>
                                         <option value="2">Heredia</option>
@@ -46,7 +46,7 @@
                                     <label>Provincia</label>
                                 </div>
                                 <div class="input-field col s12 m4 l4">
-                                    <select name="canton">
+                                    <select name="canton" id="cmbcanton">
                                         <option value="" disabled selected>Seleccionar</option>
                                         <option value="1">Mas de 6 meses</option>
                                         <option value="2">Mas de 1 año</option>
@@ -55,7 +55,7 @@
                                     <label>Canton</label>
                                 </div>
                                 <div class="input-field col s12 m4 l4">
-                                    <select name="distrito">
+                                    <select name="distrito" id="cmbdistrito">
                                         <option value="" disabled selected>Seleccionar</option>
                                         <option value="1">Mas de 6 meses</option>
                                         <option value="2">Mas de 1 año</option>
@@ -67,15 +67,15 @@
 
                             <div class="row">
                                 <div class="input-field col s12 m3 l3">
-                                    <input placeholder="2222-2222" name="telefono" id="first_name" type="text" class="validate">
+                                    <input placeholder="2222-2222" name="telefono" id="txttelefono" type="text" class="validate">
                                     <label for="first_name">Telefono</label>
                                 </div>
                                 <div class="input-field col s12 m3 l3">
-                                    <input placeholder="1-2345-6789" name="cedula" id="first_name" type="text" class="validate">
+                                    <input placeholder="1-2345-6789" name="cedula" id="txtcedula" type="text" class="validate">
                                     <label for="first_name">Cedula</label>
                                 </div>
                                 <div class="input-field col s12 m3 l3">
-                                    <select name="nacionalidad">
+                                    <select name="nacionalidad" id="cmbnacionalidad">
                                         <option value="" disabled selected>Seleccionar</option>
                                         <option value="1">Costa Rica</option>
                                         <option value="2">Nicaragua</option>
@@ -84,7 +84,7 @@
                                     <label>Nacionalidad</label>
                                 </div>
                                 <div class="input-field col s12 m3 l3">
-                                    <select name="edad">
+                                    <select name="edad" id="cmbedad">
                                         <option value="" disabled selected>Seleccionar</option>
                                         <option value="1">18-35</option>
                                         <option value="2">36-50</option>
@@ -97,7 +97,7 @@
 
                             <div class="row">
                                 <div class="input-field col s12 m3 l3">
-                                    <select name="ocupacion">
+                                    <select name="ocupacion" id="cmbocupacion">
                                         <option value="" disabled selected>Seleccionar</option>
                                         <option value="1">Costa Rica</option>
                                         <option value="2">Nicaragua</option>
