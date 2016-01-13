@@ -17,7 +17,6 @@ Route::get('/mapa',['as'=>'mapa', 'uses'=>'MainController@mapa']);
 Route::get('/mediar',['as'=>'clasificacion', 'uses'=>'MainController@clasificacion']);
 Route::get('/cuestionario',['as'=>'cuestionario', 'uses'=>'MainController@cuestionario']);
 Route::get('/formulario',['as'=>'formulario', 'uses'=>'MainController@boleta']);
-Route::get('/formularioContra',['as'=>'formularioContra', 'uses'=>'MainController@boletaContra']);
 Route::get('/termina',['as'=>'termina', 'uses'=>'MainController@termina']);
 Route::post('/check', 'CasosController@validatePartA');
 
@@ -31,10 +30,15 @@ Route::group(['prefix'=>'boleta'], function(){
 	
 
 //***************ADMINISTRADORES***********************//
-	Route::group(['prefix'=>'admin'], function(){
-		Route::get('/',['as'=>'adminMain', 'uses'=>'CasosController@boletasInicio']);
-	});
+Route::group(['prefix'=>'admin'], function(){
+	Route::get('/',['as'=>'adminMain', 'uses'=>'CasosController@boletasInicio']);
+});
 
+//***************PROVINCIAS***********************//
+Route::group(['prefix'=>'provincia'], function(){
+	Route::get('/{id}',['as'=>'findcanton', 'uses'=>'ProvinciasController@findcanton']);
+	Route::get('/{idProvincia}/{idCanton}',['as'=>'finddistrito', 'uses'=>'ProvinciasController@finddistrito']);
+});
 
 
 

@@ -1,3 +1,48 @@
+$(document).ready(function(){
+	$("#cmbprovincia").change(function(){
+		var id=$("#cmbprovincia").val();
+		var url="provincia/"+id;
+		$.ajax({
+			url: url,
+			dataType: 'json',
+			error: function(error){
+				console.log(error);
+			},
+			success: function(data){
+				llenarCombo(data,"#cmbcanton");
+				$("#cmbdistrito").html("<option value= disabled selected>Seleccionar</option>");
+				$('select').material_select();
+			}
+		});
+	});
+
+	$("#cmbcanton").change(function(){
+		var idProvincia=$("#cmbprovincia").val();
+		var idCanton=$("#cmbcanton").val();
+		var url="provincia/"+idProvincia+"/"+idCanton;
+		$.ajax({
+			url: url,
+			dataType: 'json',
+			error: function(error){
+				console.log(error);
+			},
+			success: function(data){
+				llenarCombo(data,"#cmbdistrito");
+			}
+			});
+		});
+	});
+	
+function llenarCombo(data, cmbname){
+			console.log(data);
+            $(cmbname).html("<option value= disabled selected>Seleccionar</option>");
+            for(var x=0; x<data.length; x++){
+            	$(cmbname).append(
+            		"<option value='"+data[x].id+"'>"+data[x].nombre+"</option>"
+            		);
+            }
+            $('select').material_select();
+}
 
 /*******************FUNCION DE LOS BOTONES****************************/
 function next(){
@@ -18,38 +63,38 @@ function next(){
 					$("#lblnombre").addClass("errorlbl");
 					//Materialize.toast('I am a toast!', 4000);
 
-				}else if(errors.apellido1){
+				}if(errors.apellido1){
 					$("#txtapellido1").addClass("errortxt");
 					$("#lblapellido1").addClass("errorlbl");
 
-				}else if(errors.apellido2){
+				}if(errors.apellido2){
 					$("#txtapellido2").addClass("errortxt");
 					$("#lblapellido2").addClass("errorlbl");
-				}else if(errors.provincia){
+				}if(errors.provincia){
 					$("#cmbprovincia").addClass("errortxt");
 					$("#lblprovincia").addClass("errorlbl");
 
-				}else if(errors.canton){
+				}if(errors.canton){
 					$("#cmbcanton").addClass("errortxt");
 					$("#lblcanton").addClass("errorlbl");
 
-				}else if(errors.distrito){
+				}if(errors.distrito){
 					$("#cmbdistrito").addClass("errortxt");
 					$("#lbldistrito").addClass("errorlbl");
 
-				}else if(errors.telefono){
+				}if(errors.telefono){
 					$("#txttelefono").addClass("errortxt");
 					$("#lbltelefono").addClass("errorlbl");
 
-				}else if(errors.cedula){
+				}if(errors.cedula){
 					$("#txtcedula").addClass("errortxt");
 					$("#lblcedula").addClass("errorlbl");
 
-				}else if(errors.edad){
+				}if(errors.edad){
 					$("#cmbedad").addClass("errortxt");
 					$("#lbledad").addClass("errorlbl");
 
-				}else if(errors.ocupacion){
+				}if(errors.ocupacion){
 					$("#cmbocupacion").addClass("errortxt");
 					$("#lblocupacion").addClass("errorlbl");
 

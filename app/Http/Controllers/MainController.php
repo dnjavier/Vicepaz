@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Provincia;
 
 class MainController extends Controller
 {
@@ -30,12 +31,10 @@ class MainController extends Controller
     }
 
     public function boleta(){
-        return view('boleta');
+        $provincias = Provincia::all();
+        return view('boleta')->with('provincias',$provincias);
     }
     
-    public function boletaContra(){
-        return view('boletaContra');
-    }
     
     public function termina(){
         return view('termina');

@@ -34,15 +34,11 @@
 
                             <div class="row">
                                 <div class="input-field col s12 m4 l4">
-                                    <select name="provincia" id="cmbprovincia">
+                                    <select name="provincia" id="cmbprovincia" >
                                         <option value="" disabled selected>Seleccionar</option>
-                                        <option value="1">San Jose</option>
-                                        <option value="2">Alajuela</option>
-                                        <option value="3">Cartago</option>
-                                        <option value="4">Heredia</option>
-                                        <option value="5">Guanacaste</option>
-                                        <option value="6">Puntarenas</option>
-                                        <option value="7">Limón</option>
+                                        @foreach($provincias as $provincia)
+                                            <option value="{{$provincia->id}}">{{$provincia->nombre}}</option>
+                                        @endforeach
                                     </select>
                                     <label id="lblprovincia">Provincia</label>
                                 </div>
