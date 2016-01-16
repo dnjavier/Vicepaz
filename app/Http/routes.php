@@ -18,9 +18,10 @@ Route::get('/mediar',['as'=>'clasificacion', 'uses'=>'MainController@clasificaci
 Route::get('/cuestionario',['as'=>'cuestionario', 'uses'=>'MainController@cuestionario']);
 Route::get('/formulario',['as'=>'formulario', 'uses'=>'MainController@boleta']);
 Route::get('/termina',['as'=>'termina', 'uses'=>'MainController@termina']);
+Route::get('/mediadores',['as'=>'mediadores', 'uses'=>'MainController@mediadores']);
 Route::post('/check', 'CasosController@validatePartA');
 
-	//FUNCIONES BOLETA
+//FUNCIONES BOLETA
 Route::group(['prefix'=>'boleta'], function(){
 	Route::get('/delete/{number}',['as'=>'verboletas', 'uses'=>'CasosController@softdelete']);
 	Route::post('/crear',['as'=>'crearboleta', 'uses'=>'CasosController@crearboleta']);

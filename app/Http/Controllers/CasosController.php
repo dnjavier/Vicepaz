@@ -14,10 +14,10 @@ class CasosController extends Controller
     public function crearboleta(Request $request){
    		$boletaA = new Boleta;
    		$boletaCP = new Boleta;
-      $numero = $this->getNumber();
+        $numero = $this->getNumber();
 
-      $boletaA->tipo=1;
-      $boletaA->numero=$numero;
+        $boletaA->tipo=1;
+        $boletaA->numero=$numero;
    		$boletaA->nombre = $request->nombre;
    		$boletaA->apellido1 = $request->apellido1;
    		$boletaA->apellido2 = $request->apellido2;
@@ -30,9 +30,9 @@ class CasosController extends Controller
    		$boletaA->edad = $request->edad;
    		$boletaA->ocupacion = $request->ocupacion;
 
-		  //LAS VARIABLES DE LA CONTRAPARTE SON IGUALES PERO CON LAS LETRAS CP AL INICIO
-      $boletaCP->tipo=2;
-      $boletaCP->numero=$numero;
+        //LAS VARIABLES DE LA CONTRAPARTE SON IGUALES PERO CON LAS LETRAS CP AL INICIO
+        $boletaCP->tipo=2;
+        $boletaCP->numero=$numero;
    		$boletaCP->nombre = $request->cpnombre;
    		$boletaCP->apellido1 = $request->cpapellido1;
    		$boletaCP->apellido2 = $request->cpapellido2;
@@ -44,49 +44,51 @@ class CasosController extends Controller
    		$boletaCP->nacionalidad = $request->cpnacionalidad;
    		$boletaCP->edad = $request->cpedad;
    		$boletaCP->ocupacion = $request->cpocupacion;
-      $boletaCP->observaciones = $request->cpobservaciones;
+        $boletaCP->observaciones = $request->cpobservaciones;
 
-      $boletaCP->save();
-      $boletaA->save();
+        $boletaCP->save();
+        $boletaA->save();
 
     }
 
     //Muestra la informacion de las boletas en la pagina principal del admin
     public function boletasInicio(){ 
       	$boletas = Boleta::where('tipo',1)->get();
-      foreach($boletas as $boleta){
-        $boleta->casa;
-        $boleta->estado;
-        $boleta->clasificacion;
-       }
+        foreach($boletas as $boleta){
+            $boleta->casa;
+            $boleta->estado;
+            $boleta->clasificacion;
+        }
       	return view('dashboard.casos', ['datos' => $boletas]);
     }
+    
+    
 
    public function validatePartA(Request $request){
-      $this->validate($request, [
-        'nombre'=>'required|string',
-        'apellido1'=>'required|string',
-        'apellido2'=>'required|string',
-        'provincia'=>'required|numeric',
-        'canton'=>'required|numeric',
-        'distrito'=>'required|numeric',
-        'telefono'=>'required|numeric|between:10000000,99999999',
-        'cedula'=>'required|numeric|between:100000000,999999999',
-        'nacionalidad'=>'required|string',
-        'edad'=>'required|string',
-        'ocupacion'=>'required|string',
-        ]);
+       $this->validate($request, [
+            'nombre'=>'required|string',
+            'apellido1'=>'required|string',
+            'apellido2'=>'required|string',
+            'provincia'=>'required|numeric',
+            'canton'=>'required|numeric',
+            'distrito'=>'required|numeric',
+            'telefono'=>'required|numeric|between:10000000,99999999',
+            'cedula'=>'required|numeric|between:100000000,999999999',
+            'nacionalidad'=>'required|string',
+            'edad'=>'required|string',
+            'ocupacion'=>'required|string',
+       ]);
 
-      return response()->json(["status"=>"ok"]);
-    }
+       return response()->json(["status"=>"ok"]);
+   }
 
     public function softdelete($number){
-      Boleta::where('numero',$number)->update(['tipo'=>'3']);
-      //QUE HACER CON EL ESTADO??
-      return redirect()->route('adminMain');
+        Boleta::where('numero',$number)->update(['tipo'=>'3']);
+        //QUE HACER CON EL ESTADO??
+        return redirect()->route('adminMain');
     }
 
     private function getNumber(){
-     return Boleta::where('tipo','1')->max('numero')+1;
+        return Boleta::where('tipo','1')->max('numero')+1;
     }
 }

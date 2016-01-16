@@ -34,10 +34,14 @@ class MainController extends Controller
         $provincias = Provincia::all();
         return view('boleta')->with('provincias',$provincias);
     }
-    
-    
+        
     public function termina(){
         return view('termina');
+    }
+    
+    //Muestra la informacion de los mediadores en admin
+    public function mediadores(){ 
+      	return view('dashboard.mediadores');
     }
 
    
