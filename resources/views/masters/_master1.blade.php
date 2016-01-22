@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
     
     <!-- [favicon] begin -->
-    <link rel="shortcut icon" type="image/x-icon" href="{{asset('assets/images/favicon.ico')}}" />
+    <!-- <link rel="shortcut icon" type="image/x-icon" href="{{asset('assets/images/favicon.ico')}}" /> -->
     <!-- [favicon] end -->    
 </head>
 
