@@ -28,12 +28,12 @@
             <div class="nav-wrapper" style="background-color: #152F49;">
             <div class="container">
             
-                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
                 <ul class="left hide-on-med-and-down">
                     <li><a href="#">INICIO</a></li>
                     <li><a href="#">DINARAC</a></li>
                     <!-- Dropdown Trigger -->
-                    <li><a class="dropdown-button" href="#" data-activates="dropdown1">DIGEPAZ<i class="mdi-navigation-arrow-drop-down right"></i></a></li>
+                    <li><a class="dropdown-button" href="#" data-activates="dropdown1">DIGEPAZ<i class="material-icons right">arrow_drop_down</i></a></li>
                 </ul>
 
                 <!-- MENU MOVIL -->

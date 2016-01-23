@@ -7,11 +7,6 @@
     flex: 1 0 auto;
   }
 
-.answer{
-    padding-left: 4em;
-    padding-bottom: 3em;
-}
-
 .btn-nav{
     width:100%;
     margin-bottom: 5px;
@@ -50,4 +45,25 @@
 .errorlbl{
     color: red !important;
 }
-    
+
+/* Style for questions */
+
+.cuestionario li{
+    padding: 0 0 2rem 0;
+} 
+
+.cuestionario .col{
+    padding: 0;
+} 
+
+.cuestionario li div {
+    padding: 0 0 0 2rem;
+} 
+
+.cuestionario li .reset-col {
+    padding: 0 0 2rem 2rem;
+}
+
+.cuestionario label{
+    padding: 0 0 2rem 0;
+} 
