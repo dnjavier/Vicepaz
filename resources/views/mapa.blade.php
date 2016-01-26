@@ -1,19 +1,32 @@
 @extends('masters._master1')
 
 @section('body')            
-    <script src="http://maps.googleapis.com/maps/api/js"></script>
-    <script>
-        function initialize() {
-            var mapProp = {
-                center: new google.maps.LatLng(9.928271299999999,-84.07207119999998),
-                zoom: 18,
-                mapTypeId: google.maps.MapTypeId.ROADMAP
-            };
-            var map=new google.maps.Map(document.getElementById("googleMap"), mapProp);
-        }
-        google.maps.event.addDomListener(window, 'load', initialize);
-    </script>
 
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+    <script>
+        var direcciones = {
+            "direcciones": [
+                { "lat":"1" , "lng":"1" },
+                { "lat":"7" , "lng":"8" },
+                { "lat":"9.928271299999999" , "lng":"-84.07207119999998" }
+            ]};
+    var center = new google.maps.LatLng(9.928271299999999,-84.07207119999998);
+      function initialize() {
+        var mapOptions = {
+          zoom: 20,
+          center: center,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+        map = new google.maps.Map(document.getElementById('googleMap'), mapOptions);
+            for (var i = 0; i < direcciones.direcciones.length; i++){
+            marker = new google.maps.Marker({
+            position: new google.maps.LatLng(direcciones.direcciones[i].lat, direcciones.direcciones[i].lng),
+            map: map
+        });
+          }
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
     <div class="row hide">
         <div class="card-panel hoverable">
             <div class="card-content">
